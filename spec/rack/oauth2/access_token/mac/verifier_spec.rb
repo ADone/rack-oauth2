@@ -14,6 +14,11 @@ describe Rack::OAuth2::AccessToken::MAC::Verifier do
     its(:hash_generator) { should be_instance_of OpenSSL::Digest::SHA256 }
   end
 
+  context 'when "hmac-sha-512" is specified' do
+    let(:algorithm) { 'hmac-sha-512' }
+    its(:hash_generator) { should be_instance_of OpenSSL::Digest::SHA512 }
+  end
+
   context 'otherwise' do
     let(:algorithm) { 'invalid' }
     it do
