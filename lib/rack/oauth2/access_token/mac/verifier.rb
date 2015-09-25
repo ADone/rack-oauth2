@@ -33,6 +33,8 @@ module Rack
               OpenSSL::Digest::SHA1.new
             when 'hmac-sha-256'
               OpenSSL::Digest::SHA256.new
+            when 'hmac-sha-512'
+              OpenSSL::Digest::SHA512.new
             else
               raise 'Unsupported Algorithm'
             end
