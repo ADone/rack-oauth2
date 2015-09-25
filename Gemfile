@@ -5,3 +5,5 @@ platforms :jruby do
 end
 
 gemspec
+
+gem 'codeclimate-test-reporter', group: :test, require: nil
